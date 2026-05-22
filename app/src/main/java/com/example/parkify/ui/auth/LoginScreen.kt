@@ -1,5 +1,6 @@
 package com.example.parkify.ui.auth
 
+import androidx.compose.foundation.Image // <-- NUEVO IMPORT NECESARIO
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,6 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource // <-- NUEVO IMPORT NECESARIO
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -21,6 +23,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.parkify.R // <-- Asegúrate de tener el import de tus recursos R
 
 @Composable
 fun LoginScreen(
@@ -45,39 +48,34 @@ fun LoginScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 32.dp),
+                .padding(horizontal = 15.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(Modifier.height(64.dp))
+            Spacer(Modifier.height(24.dp))
 
-            Box(
+
+            Image(
+                painter = painterResource(id = R.drawable.parkify),
+                contentDescription = "Logo de Parkify",
+                // Fit asegura que la imagen se vea completa sin recortar los bordes
+                contentScale = androidx.compose.ui.layout.ContentScale.Fit,
                 modifier = Modifier
-                    .size(120.dp)
-                    .clip(RoundedCornerShape(24.dp))
-                    .background(MaterialTheme.colorScheme.primaryContainer),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "P",
-                    fontSize = 56.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.primary
-                )
-            }
-
-            Spacer(Modifier.height(16.dp))
-
-            Text(
-                text = "Parkify",
-                fontSize = 28.sp,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
+                    .fillMaxWidth()            // Ocupa el ancho disponible de los lados
+                    .height(500.dp)            // Ajusta este alto si quieres que el logo se vea más grande o pequeño
             )
+
+
+
+
             Text(
                 text = "Control de Parqueadero",
-                fontSize = 14.sp,
+                fontSize = 18.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
+
+// -----------------------------------------------------------------
+// ... abajo continúa el resto de tu código ...
+            // -----------------------------------------------------------------
 
             Spacer(Modifier.height(40.dp))
 
