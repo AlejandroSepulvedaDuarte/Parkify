@@ -51,7 +51,7 @@ fun LoginScreen(
                 .padding(horizontal = 15.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(40.dp))
 
 
             Image(
@@ -61,11 +61,8 @@ fun LoginScreen(
                 contentScale = androidx.compose.ui.layout.ContentScale.Fit,
                 modifier = Modifier
                     .fillMaxWidth()            // Ocupa el ancho disponible de los lados
-                    .height(500.dp)            // Ajusta este alto si quieres que el logo se vea más grande o pequeño
+                    .width(500.dp)            // Ajusta este alto si quieres que el logo se vea más grande o pequeño
             )
-
-
-
 
             Text(
                 text = "Control de Parqueadero",
